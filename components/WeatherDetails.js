@@ -4,18 +4,24 @@ import { colors } from '../utils/index'
 import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons'
 
 const { PRIMARY_COLOR, SECONDARY_COLOR, BORDER_COLOR } = colors
+const SPEED_FORMULA = 3.6
 
 export default function WeatherDetails({ currentWeather, unitsSystem }){
 
     // feels like = sensação termica
     const {
-        main: { feels_like, humidity, pressure},
+        main: { feels_like, humidity, pressure, temp_min, temp_max},
         wind: { speed },
 
     } = currentWeather
 
-    const feels_likeTest = unitsSystem === 'metric' ? `${feels_like} ºC` : `${feels_like} ºF`
-    const windSpeed = unitsSystem === 'metric' ? `${Math.round(speed)} m/s` : `${Math.round(speed)} miles/h`
+    // adicionar negrito em parte de texto
+    const B = (props) => <Text style={{fontWeight: 'bold', color: SECONDARY_COLOR}}>{props.children}</Text>
+
+    const feelsLikeUnit = unitsSystem === 'metric' ? `${Math.round(feels_like)}ºC` : `${Math.round(feels_like)}ºF`
+    const tempMinUnit = unitsSystem === 'metric' ? `${Math.round(temp_min)}ºC` : `${Math.round(temp_min)}ºF`
+    const tempMaxUnit = unitsSystem === 'metric' ? `${Math.round(temp_max)}ºC` : `${Math.round(temp_max)}ºF`
+    const windSpeed = unitsSystem === 'metric' ? `${Math.round(speed) * SPEED_FORMULA} m/s` : `${Math.round(speed)} milhas/h`
 
     return(
         <View style={styles.weatherDetails}>
@@ -25,7 +31,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                         <FontAwesome5 name="temperature-low" size={25} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
                             <Text>Sensação:</Text>
-                            <Text style={styles.textSecondary}>{feels_likeTest}</Text>
+                            <Text style={styles.textSecondary}>{feelsLikeUnit}</Text>
                         </View>                        
                     </View>
                 </View>
@@ -40,12 +46,23 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                 </View>
             </View>
             <View style={{...styles.weatherDetailsRow, borderTopWidth: 1, borderTopColor: BORDER_COLOR  }}>
+                {/* Remover campo PRESSÃO ATMOSFÉRICA
                 <View style={{ ...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR }}>
                     <View style={styles.weatherDetailsRow}>
                         <MaterialCommunityIcons name="speedometer" size={30} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
                             <Text>Pressão:</Text>
                             <Text style={styles.textSecondary}>{pressure} hPa</Text>
+                        </View>                        
+                    </View>
+                </View>
+                */}
+                <View style={{ ...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR }}>
+                    <View style={styles.weatherDetailsRow}>
+                        <MaterialCommunityIcons name="thermometer-lines" size={30} color={PRIMARY_COLOR} />
+                        <View style={styles.weatherDetailsItems}>
+                            <Text style={styles.textMaxMin}>Maxima: <B>{tempMinUnit}</B></Text>
+                            <Text style={styles.textMaxMin}>Minima: <B>{tempMaxUnit}</B></Text>
                         </View>                        
                     </View>
                 </View>
@@ -93,5 +110,9 @@ const styles = StyleSheet.create({
         color: SECONDARY_COLOR,
         fontWeight: '700',
         marginTop: 7,
+    },
+
+    textMaxMin: {
+        marginTop: 4,
     }
 })
