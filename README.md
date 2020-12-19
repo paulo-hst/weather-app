@@ -15,12 +15,6 @@ Além da temperatura, é exibido em tela a região, sensação térmica, umidade
 
 ## Funcionalidades
 - [x] Acesso a geolocalização do celular
-- [x] Requisições a API do OpenWeather
-- [ ] Relóg
-- Expo
-
-## Funcionalidades
-- [x] Acesso a geolocalização do celular
 - [x] Requisio e data dinamicos
 - [ ] Alterar background de acordo com a temperatura e horário
 - [ ] Splash Screen e Icon Personalizados
