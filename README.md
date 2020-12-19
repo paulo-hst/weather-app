@@ -5,7 +5,7 @@ Aplicativo mobile que apresenta a temperatura atual a partir da API grátis do O
 Além da temperatura, é exibido em tela a região, sensação térmica, umidade, temperatura máxima, mínima e a velocidade do vento atual. Essas informações são consideradas a partir da localização do dispositivo. É possível alterar a escala entre Celcius (C) e Fahrenheit (F).
 
 <h1 align="center">
-  <img alt="wa" title="wa" src="./assets/app.jpg" width="400px"/>
+  <img alt="wa" title="wa" src="./assets/app.jpg" width="200px"/>
 </h1>
 
 ## Tecnologias / Ferramentas / Bibliotecas
@@ -16,7 +16,12 @@ Além da temperatura, é exibido em tela a região, sensação térmica, umidade
 ## Funcionalidades
 - [x] Acesso a geolocalização do celular
 - [x] Requisições a API do OpenWeather
-- [ ] Relógio e data dinamicos
+- [ ] Relóg
+- Expo
+
+## Funcionalidades
+- [x] Acesso a geolocalização do celular
+- [x] Requisio e data dinamicos
 - [ ] Alterar background de acordo com a temperatura e horário
 - [ ] Splash Screen e Icon Personalizados
 - [ ] Atualizar Layout
