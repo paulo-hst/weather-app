@@ -27,3 +27,4 @@ Além da temperatura, é exibido em tela a região, sensação térmica, umidade
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
 - [OpenWeatherAPI](https://openweathermap.org/)
+- [Pexels](https://www.pexels.com/)
