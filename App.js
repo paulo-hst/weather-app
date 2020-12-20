@@ -1,6 +1,6 @@
 import { StatusBar} from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, View, ActivityIndicator, ImageBackground } from 'react-native'
 import * as Location from 'expo-location'
 import WeatherInfo from './components/WeatherInfo'
 import UnitsPicker from './components/UnitsPicker'
@@ -10,6 +10,10 @@ import Clock from './components/Clock'
 
 import { colors } from './utils/index'
 import { WEATHER_API_KEY } from 'react-native-dotenv'
+
+/*------------------------ EDITAR -------------------------*/
+import fotooo from './assets/backgrounds/morning-clear.png';
+const image = fotooo;
 
 // const WEATHER_API_KEY = '327a35d5292c1d1dc634d3444010b127'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -67,14 +71,19 @@ export default function App() {
 
     return (
       <View style={styles.container}>
-        <StatusBar style="auto" />
-        <View style={styles.main}>
-          <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
-          <ReloadIcon load={load}/>
-          <WeatherInfo currentWeather={currentWeather} />
-        </View>
-        <Clock currentWeather={currentWeather} />
-        <WeatherDetails currentWeather={currentWeather} unitsSystem={unitsSystem}/>
+
+        { /*------------------------ EDITAR -------------------------*/ }
+        <ImageBackground source={image} style={styles.image}>
+          <StatusBar style="auto" />
+          <View style={styles.main}>
+            <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+            <ReloadIcon load={load}/>
+            <WeatherInfo currentWeather={currentWeather} />
+          </View>
+          <Clock currentWeather={currentWeather} />
+          <WeatherDetails currentWeather={currentWeather} unitsSystem={unitsSystem}/>
+        </ImageBackground>
+        
       </View>
     )
   } else if (errorMessage){
@@ -113,6 +122,14 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     top: -30,
     color: colors.PRIMARY_COLOR,
-  }
+  },
+
+  /*------------------------ EDITAR -------------------------*/
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    // opacity: 0.7,
+  },
 
 });
