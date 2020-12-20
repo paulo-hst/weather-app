@@ -1,8 +1,7 @@
 <h1 align="center">WeatherApp</h1>
 
 ## Objetivo
-Aplicativo mobile que apresenta a temperatura atual a partir da API grátis do OpenWeather utilizando React Native e Expo. 
-Além da temperatura, é exibido em tela a região, sensação térmica, umidade, temperatura máxima, mínima e a velocidade do vento atual. Essas informações são consideradas a partir da localização do dispositivo. É possível alterar a escala entre Celcius (C) e Fahrenheit (F).
+Aplicativo mobile que apresenta a temperatura atual a partir da API grátis do OpenWeather. Além da temperatura, é exibido em tela a região, sensação térmica, umidade, temperatura máxima, mínima e a velocidade do vento atual. Essas informações são consideradas a partir da localização do dispositivo. É possível alterar a escala entre Celcius (C) e Fahrenheit (F).
 
 <h1 align="center">
   <img alt="wa" title="wa" src="./assets/app.jpg" width="200px"/>
