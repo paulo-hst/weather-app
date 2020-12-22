@@ -1,7 +1,6 @@
-// CHANGE BACKGROUND COLOR BY THE TEMPERATURE (RAIN, SUN, CLOUDS)
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
-import { colors } from '../utils/index'
+import { colors, backgroundImages } from '../utils/index'
 
 const { PRIMARY_COLOR, SECONDARY_COLOR } = colors
 
@@ -17,7 +16,6 @@ export default function WeatherInfo({currentWeather}){
     const { icon, description, main } = details 
     const iconUrl = `https://openweathermap.org/img/wn/${icon}@4x.png`
     
-
     return(
         <View style={styles.weatherInfo}>
             <View style={styles.weatherInfoFirst}>
@@ -72,6 +70,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '700',
         marginTop: -5,
+        color: SECONDARY_COLOR,
         
     },
     

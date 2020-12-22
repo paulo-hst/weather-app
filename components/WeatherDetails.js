@@ -30,7 +30,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <FontAwesome5 name="temperature-low" size={25} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text>Sensação:</Text>
+                            <Text style={styles.titleDetails}>Sen. Térmica:</Text>
                             <Text style={styles.textSecondary}>{feelsLikeUnit}</Text>
                         </View>                        
                     </View>
@@ -39,7 +39,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <MaterialCommunityIcons name="water" size={35} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text>Umidade:</Text>
+                            <Text style={styles.titleDetails}>Umidade:</Text>
                             <Text style={styles.textSecondary}>{humidity} %</Text>
                         </View>                        
                     </View>
@@ -70,7 +70,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <FontAwesome5 name="wind" size={30} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text>Vento:</Text>
+                            <Text style={styles.titleDetails}>Vento:</Text>
                             <Text style={styles.textSecondary}>{windSpeed}</Text>
                         </View>                        
                     </View>
@@ -100,6 +100,10 @@ const styles = StyleSheet.create({
         padding: 20,
     },
 
+    titleDetails: {
+        color: PRIMARY_COLOR
+    },
+
     weatherDetailsItems: {
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
@@ -114,5 +118,6 @@ const styles = StyleSheet.create({
 
     textMaxMin: {
         marginTop: 4,
+        color: SECONDARY_COLOR,
     }
 })
