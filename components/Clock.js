@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
-
 import { colors } from '../utils/index'
 
 export default function Clock({currentWeather}){
@@ -9,7 +8,17 @@ export default function Clock({currentWeather}){
     const cityName = name === 'São Cristóvão' ? 'Rio de Janeiro' : name
     const horaInicial = new Date().toLocaleTimeString()
     const data = new Date().toLocaleDateString()
-    const [ hora, setHora ] = useState(horaInicial)
+
+    const [seconds, setSeconds] = useState(0);
+    const [isActive, setIsActive] = useState(0);
+   
+    useEffect(() => {
+      let interval = null;
+        interval = setInterval(() => {
+          setSeconds(seconds => seconds + 1);
+        }, 1000);
+      return () => clearInterval(interval);
+    }, [isActive, seconds]);
 
     return(
         <View style={styles.clockContainer}>

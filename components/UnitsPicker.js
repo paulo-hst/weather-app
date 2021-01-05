@@ -12,7 +12,7 @@ export default function UnitsPicker({ unitsSystem, setUnitsSystem }){
                 selectedValue={unitsSystem} 
                 onValueChange={(item) => setUnitsSystem(item)} 
                 mode="drowdown" // APENAS ANDROID
-                itemStyle={{ fontSize: 12, }}
+                itemStyle={{ fontSize: 20, }}
             >
                 <Picker.Item color={PRIMARY_COLOR} label="ºC" value="metric" />
                 <Picker.Item color={PRIMARY_COLOR} label="ºF" value="imperial"/>

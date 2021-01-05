@@ -30,7 +30,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <FontAwesome5 name="temperature-low" size={25} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text style={styles.titleDetails}>Sen. Térmica:</Text>
+                            <Text style={styles.titleDetails}>Sen. Térmica</Text>
                             <Text style={styles.textSecondary}>{feelsLikeUnit}</Text>
                         </View>                        
                     </View>
@@ -39,30 +39,19 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <MaterialCommunityIcons name="water" size={35} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text style={styles.titleDetails}>Umidade:</Text>
+                            <Text style={styles.titleDetails}>Umidade</Text>
                             <Text style={styles.textSecondary}>{humidity} %</Text>
                         </View>                        
                     </View>
                 </View>
             </View>
             <View style={{...styles.weatherDetailsRow, borderTopWidth: 1, borderTopColor: BORDER_COLOR  }}>
-                {/* Remover campo PRESSÃO ATMOSFÉRICA
-                <View style={{ ...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR }}>
-                    <View style={styles.weatherDetailsRow}>
-                        <MaterialCommunityIcons name="speedometer" size={30} color={PRIMARY_COLOR} />
-                        <View style={styles.weatherDetailsItems}>
-                            <Text>Pressão:</Text>
-                            <Text style={styles.textSecondary}>{pressure} hPa</Text>
-                        </View>                        
-                    </View>
-                </View>
-                */}
                 <View style={{ ...styles.weatherDetailsBox, borderRightWidth: 1, borderRightColor: BORDER_COLOR }}>
                     <View style={styles.weatherDetailsRow}>
                         <MaterialCommunityIcons name="thermometer-lines" size={30} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text style={styles.textMaxMin}>Maxima: <B>{tempMinUnit}</B></Text>
-                            <Text style={styles.textMaxMin}>Minima: <B>{tempMaxUnit}</B></Text>
+                            <Text style={styles.textMaxMin}>Maxima <B>{tempMinUnit}</B></Text>
+                            <Text style={styles.textMaxMin}>Minima <B>{tempMaxUnit}</B></Text>
                         </View>                        
                     </View>
                 </View>
@@ -70,7 +59,7 @@ export default function WeatherDetails({ currentWeather, unitsSystem }){
                     <View style={styles.weatherDetailsRow}>
                         <FontAwesome5 name="wind" size={30} color={PRIMARY_COLOR} />
                         <View style={styles.weatherDetailsItems}>
-                            <Text style={styles.titleDetails}>Vento:</Text>
+                            <Text style={styles.titleDetails}>Vento</Text>
                             <Text style={styles.textSecondary}>{windSpeed}</Text>
                         </View>                        
                     </View>
@@ -87,6 +76,7 @@ const styles = StyleSheet.create({
         margin: 15,
         borderColor: BORDER_COLOR,
         borderRadius: 10,
+        backgroundColor: 'rgba(0,0,0,0.5)'
     },
 
     weatherDetailsRow: {
