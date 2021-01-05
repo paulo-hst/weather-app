@@ -15,7 +15,7 @@ Aplicativo mobile que apresenta a temperatura atual a partir da API grátis do O
 ## Funcionalidades
 - [x] Acesso a geolocalização do celular
 - [x] Requisio e data dinamicos
-- [ ] Alterar background de acordo com a temperatura e horário
+- [x] Alterar background de acordo com a temperatura e horário
 - [ ] Splash Screen e Icon Personalizados
 - [ ] Atualizar Layout
 
