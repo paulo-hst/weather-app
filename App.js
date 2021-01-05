@@ -58,11 +58,55 @@ export default function App() {
       setErrorMessage(error.message)
     }
   }
+  
+  function handleBackground(currentWeather){
+    
+    const { main: { temp } } = currentWeather
+  
+    console.log(Math.round(temp))
+    const currentHour = new Date().getHours()
+
+      if(temp < 20 && currentHour < 5){
+        return backgroundImages.nightRain
+      } else if(temp >= 20 && temp < 25 && currentHour < 5){
+        return backgroundImages.nightCloudy
+      } else if(temp >= 25 && currentHour < 5){
+        return backgroundImages.nightClear
+      }
+      
+      else if(temp < 20 && currentHour >= 5 && currentHour < 12){
+        return backgroundImages.morningRain
+      } else if(temp >= 20 && temp < 25 && currentHour >= 5 && currentHour < 12){
+        return backgroundImages.morningCloudy
+      } else if(temp >= 25 && currentHour >= 5 && currentHour < 12){
+        return backgroundImages.morningClear
+      }
+      
+      else if(temp <= 20 && currentHour >= 12 && currentHour < 18){
+        return backgroundImages.afternoonRain
+      } else if(temp > 20 && temp <= 25 && currentHour >= 12 && currentHour < 18){
+        return backgroundImages.afternoonCloudy
+      } else if(temp > 25 && currentHour >= 12 && currentHour < 18){
+        return backgroundImages.afternoonClear
+      } 
+      
+      else if(temp < 20 && currentHour > 18){
+        return backgroundImages.nightRain
+      } else if(temp >= 20 && temp < 25 && currentHour > 18){
+        return backgroundImages.nightCloudy
+      } else if(temp >= 25 && currentHour > 18){
+        return backgroundImages.nightClear
+      }
+      
+      else{
+        return
+      }
+  }
 
   if(currentWeather){
 
     return (
-      <ImageBackground source={backgroundImages.morningRain} style={styles.background}>
+      <ImageBackground source={handleBackground(currentWeather)} style={styles.background}>
         <View style={styles.container}>
             <StatusBar style="auto" />
             <View style={styles.main}>
@@ -114,7 +158,6 @@ const styles = StyleSheet.create({
     color: colors.EXTRA_COLOR,
   },
 
-  /*------------------------ EDITAR -------------------------*/
   background: {
     width: '100%',
     height: '100%'
